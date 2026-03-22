@@ -26,8 +26,16 @@ jobs:
       - name: Run renew script
         env:
           # 以下变量需在仓库 Settings -> Secrets -> Actions 中配置 
-          DNSHE_API_KEY: ${{ secrets.DNSHE_API_KEY }}
-          DNSHE_API_SECRET: ${{ secrets.DNSHE_API_SECRET }}
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
           PUSHPLUS_TOPIC: ${{ secrets.PUSHPLUS_TOPIC }}
+          # 账号 1
+          DNSHE_API_KEY_1: ${{ secrets.DNSHE_API_KEY_1 }}
+          DNSHE_API_SECRET_1: ${{ secrets.DNSHE_API_SECRET_1 }}
+          # 账号 2
+          DNSHE_API_KEY_2: ${{ secrets.DNSHE_API_KEY_2 }}
+          DNSHE_API_SECRET_2: ${{ secrets.DNSHE_API_SECRET_2 }}
+          # 账号 3
+          DNSHE_API_KEY_3: ${{ secrets.DNSHE_API_KEY_3 }}
+          DNSHE_API_SECRET_3: ${{ secrets.DNSHE_API_SECRET_3 }}
+          
         run: python renew_domains.py
